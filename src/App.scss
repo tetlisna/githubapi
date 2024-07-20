@@ -1,4 +1,33 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+.main-content {
+  display: grid;
+  // grid-template-columns: repeat(1fr 1fr 1fr);
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 1rem;
+  // justify-content: center;
+}
+
+.input-search {
+  // display: block;
+  width: 100vw;
+  border: 1px solid var(--light-color);
+  border-radius: 0.2rem;
+  padding: 12px 20px;
+  background: var(--dark-color);
+  color: var(--light-color);
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.btn {
+  background: var(--primary-color);
+  border: none;
+  line-height: 1.6rem;
+  padding: 12px 20px;
+
+  &:hover {
+    background: var(--primary-color-dark);
+  }
 }

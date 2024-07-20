@@ -1,0 +1,70 @@
+.profileCard {
+  border: 1px solid var(--light-color);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 250px;
+  grid-gap: 2rem;
+  padding: 2rem 1.5rem;
+
+  &__avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &__descr {
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__skills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.avatarName {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  grid-gap: 2rem;
+}
+
+
+.skillTag {
+  display: inline-block;
+  border: 1px solid var(--light-color);
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.6rem;
+  padding: 0.2rem 0.3rem;
+  margin-right: 0.3rem;
+}
+
+.btn {
+  border: none;
+  background: var(--primary-color);
+  line-height: 1.6rem;
+  color: var(--dark-color);
+  padding: 0.8rem 1.2rem;
+  font-weight: 700;
+  line-height: 1.6rem;
+}
+
+.avatarTitle {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.avatarSubtitle {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+

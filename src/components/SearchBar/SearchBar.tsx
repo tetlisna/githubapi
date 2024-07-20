@@ -13,10 +13,8 @@ const SearchBar: React.FC<Props> = ({ onSearch }) => {
   const debouncedQuery = useDebounce(query, 1000);
 
   useEffect(() => {
-    console.log({ debouncedQuery });
-
     onSearch(debouncedQuery);
-  }, [debouncedQuery]);
+  }, [debouncedQuery, onSearch]);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     console.log('in handleInputChange');

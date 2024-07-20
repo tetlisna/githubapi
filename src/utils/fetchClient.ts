@@ -3,12 +3,6 @@ import { RequestMethod } from '../types/types';
 const BASE_URL = import.meta.env.VITE_API_URL;
 const token = import.meta.env.REACT_APP_GITHUB_TOKEN;
 
-function wait(delay: number) {
-  return new Promise(resolve => {
-    setTimeout(resolve, delay);
-  });
-}
-
 function request<T>(
   url: string,
   method: RequestMethod = 'GET',
@@ -22,7 +16,7 @@ function request<T>(
     };
   }
 
-  return wait(100)
+  return Promise.resolve()
     .then(() => fetch(BASE_URL + url, options))
     .then(response => {
       if (!response.ok) {

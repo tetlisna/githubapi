@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import './App.scss';
 
 import SearchBar from './components/SearchBar/SearchBar';
@@ -13,7 +13,7 @@ function App() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [hasError, setHasError] = useState<string | null>(null);
 
-  const handleSearch = async (query: string) => {
+  const handleSearch = useCallback(async (query: string) => {
     setIsLoading(true);
 
     setHasError(null);
@@ -29,7 +29,7 @@ function App() {
     }
 
     setIsLoading(false);
-  };
+  }, []);
 
   return (
     <div className="main-content">

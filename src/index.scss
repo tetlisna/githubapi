@@ -2,32 +2,40 @@
   font-family: 'JetBrains Mono';
   font-style: normal;
   font-weight: 400;
-  src: local('JetBrains Mono Regular'), local('JetBrainsMono-Regular'),
-       url('./assets/fonts/JetBrainsMono-Regular.woff') format('woff');
+  src:
+    local('JetBrains Mono Regular'),
+    local('JetBrainsMono-Regular'),
+    url('./assets/fonts/JetBrainsMono-Regular.woff') format('woff');
 }
 
 @font-face {
   font-family: 'JetBrains Mono';
   font-style: normal;
   font-weight: 700;
-  src: local('JetBrains Mono Bold'), local('JetBrainsMono-Bold'),
-       url('./assets/fonts/JetBrainsMono-Regular.woff') format('woff');
+  src:
+    local('JetBrains Mono Bold'),
+    local('JetBrainsMono-Bold'),
+    url('./assets/fonts/JetBrainsMono-Regular.woff') format('woff');
 }
 
 @font-face {
   font-family: 'JetBrains Mono';
   font-style: italic;
   font-weight: 400;
-  src: local('JetBrains Mono Italic'), local('JetBrainsMono-Italic'),
-       url('./assets/fonts/JetBrainsMono-Italic.woff') format('woff');
+  src:
+    local('JetBrains Mono Italic'),
+    local('JetBrainsMono-Italic'),
+    url('./assets/fonts/JetBrainsMono-Italic.woff') format('woff');
 }
 
 @font-face {
   font-family: 'JetBrains Mono';
   font-style: italic;
   font-weight: 700;
-  src: local('JetBrains Mono Bold Italic'), local('JetBrainsMono-BoldItalic'),
-       url('./assets/fonts/JetBrainsMono-Bold-Italic.woff') format('woff');
+  src:
+    local('JetBrains Mono Bold Italic'),
+    local('JetBrainsMono-BoldItalic'),
+    url('./assets/fonts/JetBrainsMono-Bold-Italic.woff') format('woff');
 }
 
 :root {
@@ -69,5 +77,4 @@ a {
 body {
   font-family: 'JetBrains Mono', sans-serif;
   background: var(--dark-color);
- 
 }

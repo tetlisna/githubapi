@@ -5,7 +5,7 @@ import SearchBar from './components/SearchBar/SearchBar';
 import { getRepos } from './api/api';
 import { RepoDetails } from './types/interfaces';
 import AllRepos from './components/AllRepos/AllRepos';
-import { Loader } from './components/Loader';
+import Loader from './components/Loader/Loader';
 
 function App() {
   const [repos, setRepos] = useState<RepoDetails[]>([]);
@@ -14,8 +14,6 @@ function App() {
   const [hasError, setHasError] = useState<string | null>(null);
 
   const handleSearch = async (query: string) => {
-    console.log('in handleSearch', query);
-
     setIsLoading(true);
 
     setHasError(null);
@@ -36,7 +34,7 @@ function App() {
   return (
     <div className="main-content">
       <SearchBar onSearch={handleSearch} />
-      {hasError && <p>Cant find repository</p>}
+      {hasError && <p>Can't find repository</p>}
       {isLoading && <Loader />}
       {!isLoading && (
         <AllRepos repos={repos} isLoading={isLoading} hasError={hasError} />

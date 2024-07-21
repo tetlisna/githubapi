@@ -32,6 +32,8 @@
   &__link {
     color: var(--light-color);
 
+    transition: color 0.2ms ease;
+
     &:hover {
       color: var(--primary-color);
     }

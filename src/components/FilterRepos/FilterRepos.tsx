@@ -2,6 +2,7 @@
 import { FilterOptions } from '../../types/enums';
 import { RepoFilterLink } from '../RepoFilterLink/RepoFilterLink';
 import { RepoDetails } from '../../types/interfaces';
+import styles from './FilterRepos.module.scss';
 
 type Props = {
   repos: RepoDetails[];
@@ -21,7 +22,7 @@ const FilterRepos: React.FC<Props> = ({ repos, setFilterValue }) => {
   //   setSearchParams(params);
   // }
   return (
-    <nav className="filter">
+    <nav className={styles.filter}>
       {Object.values(FilterOptions).map(filterValue => (
         <RepoFilterLink
           key={filterValue}

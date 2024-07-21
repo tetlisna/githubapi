@@ -21,12 +21,13 @@
 }
 
 .errorBtn {
-  background-color: var(--primary-color);
+  background: var(--primary-color);
   border: none;
   border-radius: 0.2rem;
   line-height: 1.6rem;
   padding: 12px 20px;
 
+  transition: background 0.2ms ease;
 
   &:hover {
     background: var(--primary-color-dark);

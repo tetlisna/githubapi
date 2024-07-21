@@ -15,6 +15,7 @@ function App() {
   const [repos, setRepos] = useState<RepoDetails[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [hasError, setHasError] = useState<string | null>(null);
+
   const [filterValue, setFilterValue] = useState<FilterOptions>(
     FilterOptions.BestMatch,
   );
@@ -52,8 +53,8 @@ function App() {
 
   return (
     <div className="main-content">
-      <FilterRepos setFilterValue={setFilterValue} repos={repos} />
       <SearchBar onSearch={handleSearch} />
+      <FilterRepos setFilterValue={setFilterValue} repos={repos} />
       {isLoading && <Loader />}
       {!isLoading && (
         <AllRepos repos={repos} isLoading={isLoading} hasError={hasError} />

@@ -1,5 +1,6 @@
 import styles from './AllRepos.module.scss';
 import { RepoDetails } from '../../types/interfaces';
+import ProfileCard from '../ProfileCard/ProfileCard';
 
 type Props = {
   repos: RepoDetails[];
@@ -15,24 +16,13 @@ const AllRepos: React.FC<Props> = ({ repos, isLoading, hasError }) => {
       {hasError && <p>{hasError}</p>}
       {!isLoading && repos.length > 0 && (
         <div className={styles.reposList}>
-          <h3>Top Repositories</h3>
-          <ul>
-            {repos.map(repo => (
-              <li key={repo.id}>
-                <a
-                  href={repo.html_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {repo.name}
-                </a>{' '}
-                by {repo.owner.login}
-              </li>
-            ))}
-          </ul>
+          <h3 className={styles.title}>Top Repositories</h3>
+          {repos.map(repo => (
+            <ProfileCard key={repo.id} repo={repo} />
+          ))}
         </div>
       )}
-      {!isLoading && repos.length === 0 && <p>No repositories found</p>}
+      {/* {!isLoading && repos.length === 0 && <p>No repositories found</p>} */}
     </div>
   );
 };

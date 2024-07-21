@@ -4,16 +4,12 @@
 
   .reposList {
     margin-top: 1rem;
-
-    li {
-      margin-bottom: 0.5rem;
-      a {
-        color: var(--primary-color);
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
   }
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin: 2rem auto;
 }

@@ -28,6 +28,14 @@
     flex-direction: column;
     gap: 0.5rem;
   }
+
+  &__link {
+    color: var(--light-color);
+
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
 }
 
 .avatarName {

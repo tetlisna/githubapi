@@ -5,8 +5,7 @@
 
 .input-wrapper {
   display: flex;
-  gap: 1rem;
-  // justify-content: center;
+  // gap: 1rem;
 }
 
 .input-search {
@@ -16,18 +15,16 @@
   border-radius: 0.2rem;
   padding: 12px 20px;
   background: var(--dark-color);
-  color: var(--light-color);
+  color: var(--dark-color);
   font-weight: 400;
   font-size: 0.8rem;
 }
 
-.btn {
-  background: var(--primary-color);
-  border: none;
-  line-height: 1.6rem;
-  padding: 12px 20px;
 
-  &:hover {
-    background: var(--primary-color-dark);
-  }
-}
+ //   a {
+    //     color: var(--primary-color);
+
+    //     &:hover {
+    //       color: var(--primary-color-dark);
+    //     }
+    //   }

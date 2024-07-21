@@ -2,7 +2,7 @@
   &__label {
     position: relative;
     margin: 2rem 0;
-    width: 90%;
+    width: 100%;
   }
 
   &__label::after {
@@ -21,7 +21,7 @@
 
   &__input {
     width: 100%;
-    border: 0.1rem solid #e1e7ed;
+    border: 0.1rem solid var(--primary-color);
     border-radius: 0.2rem;
 
     outline: none;

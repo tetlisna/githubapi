@@ -12,7 +12,7 @@ function request<T>(
 
   if (data) {
     options.headers = {
-      Authorization: `Bearer ${token}`,
+      Authorization: `${token}`,
     };
   }
 

@@ -1,6 +1,6 @@
 .profileCard {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 2fr;
   border: 1px solid var(--light-color);
   grid-gap: 2rem;
   padding: 2rem 1.5rem;
@@ -12,14 +12,20 @@
     overflow: hidden;
   }
 
-  &__descr {
+  
+  &__repo {
     font-size: 0.8rem;
     font-weight: 500;
-  }
-
-  &__name {
     display: flex;
     flex-direction: column;
+    justify-content: center; 
+    gap: 1rem;
+  }
+
+  &__owner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     gap: 0.5rem;
   }
 
@@ -48,9 +54,10 @@
 }
 
 .avatarName {
-  display: grid;
-  grid-template-columns: 3rem 1fr;
-  grid-gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center children horizontally */
+  grid-gap: 0.5rem;
 
   &__title {
     font-size: 1rem;
@@ -78,9 +85,6 @@
   padding: 0.8rem 1.2rem;
   font-weight: 700;
   line-height: 1.6rem;
-}
-
-.avatarTitle {
 }
 
 .avatarSubtitle {

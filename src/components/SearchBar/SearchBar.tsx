@@ -3,6 +3,7 @@ import styles from './SearchBar.module.scss';
 import { useEffect, useState } from 'react';
 
 import { useDebounce } from '../../hooks/useDebounce';
+import { getSearchWith } from '../../utils/searchHelper';
 
 type Props = {
   searchParams: URLSearchParams;
@@ -18,22 +19,14 @@ const SearchBar: React.FC<Props> = ({ searchParams, setSearchParams }) => {
     if (!debouncedQuery.trim()) {
       setSearchParams(new URLSearchParams({}));
     } else {
-      const params = new URLSearchParams();
-      params.set('query', debouncedQuery);
-
-      if (searchParams.get('sort')) {
-        params.set('sort', searchParams.get('sort')!);
-      }
-
-      setSearchParams(params);
-
-      setSearchParams(new URLSearchParams(params));
+      const updatedParams = getSearchWith(searchParams, {
+        query: debouncedQuery,
+      });
+      setSearchParams(new URLSearchParams(updatedParams));
     }
   }, [debouncedQuery, setSearchParams]);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log('in handleInputChange');
-
     setQuery(event.target.value);
   };
 

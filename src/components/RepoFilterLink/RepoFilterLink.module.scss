@@ -1,11 +1,14 @@
 .filterLink {
+  display: inline-table;
   color: var(--primary-color);
   border: 0.1rem solid var(--primary-color);
   padding: 0.8rem;
-  transition: border-color 0.3ms ease, color 0.3ms ease;
+  transition:
+    border-color 0.3ms ease,
+    color 0.3ms ease;
 
   &:hover {
     border-color: var(--primary-color-light);
-    color:var(--primary-color-light);
+    color: var(--primary-color-light);
   }
 }

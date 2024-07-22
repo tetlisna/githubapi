@@ -7,7 +7,7 @@ type Props = {
 
 const ProfileCard: React.FC<Props> = ({ repo }) => {
   const { owner } = repo;
-  console.log({ owner }, 'repo');
+  console.log(owner, repo);
   return (
     <>
       <div className={styles.profileCard}>
@@ -19,15 +19,19 @@ const ProfileCard: React.FC<Props> = ({ repo }) => {
               className={styles.profileCard__avatar}
             />
             <div className={styles.avatarName__info}>
-              <strong className={styles.avatarName__title}>
-                <a
-                  href={owner.login}
-                  target="_blank"
-                  className={styles.profileCard__link}
-                >
-                  {owner.login}
-                </a>
-              </strong>
+              <div className={styles.profileCard__star}>
+                <div>✩</div>
+                <p>{repo.stargazers_count}</p>
+                <strong className={styles.avatarName__title}>
+                  <a
+                    href={owner.html_url}
+                    target="_blank"
+                    className={styles.profileCard__link}
+                  >
+                    {owner.login}
+                  </a>
+                </strong>
+              </div>
             </div>
             <a
               href={repo.html_url}

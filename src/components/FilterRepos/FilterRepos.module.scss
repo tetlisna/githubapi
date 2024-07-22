@@ -5,7 +5,8 @@
   padding: 0.8rem;
   color: var(--light-color);
 
-  &:hover, &:active {
+  &:hover,
+  &:active {
     color: var(--primary-color);
   }
 }

@@ -1,13 +1,12 @@
 import { useCallback, useEffect, useState } from 'react';
 import './App.scss';
-// import './testdata.json';
 
 import SearchBar from './components/SearchBar/SearchBar';
 import { getRepos } from './api/api';
 import { RepoDetails } from './types/interfaces';
 import AllRepos from './components/AllRepos/AllRepos';
 import Loader from './components/Loader/Loader';
-import { useLocation, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { FilterOptions } from './types/enums';
 import FilterRepos from './components/FilterRepos/FilterRepos';
 
@@ -16,13 +15,9 @@ function App() {
   const [repos, setRepos] = useState<RepoDetails[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [hasError, setHasError] = useState<string | null>(null);
-
   const [filterValue, setFilterValue] = useState<FilterOptions>(
     FilterOptions.BestMatch,
   );
-
-  const { pathname, search } = useLocation();
-  console.log({ pathname }, { search }, 'pathname');
 
   const handleSearch = useCallback(
     async (query: string, sort = '') => {
@@ -44,7 +39,6 @@ function App() {
 
       try {
         const repos = await getRepos(params.toString());
-        console.log(repos);
 
         setRepos(repos.items);
       } catch (err) {
@@ -56,7 +50,7 @@ function App() {
 
       setIsLoading(false);
     },
-    [filterValue, setFilterValue],
+    [filterValue],
   );
 
   useEffect(() => {

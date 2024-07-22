@@ -9,17 +9,14 @@ type Props = {
   setFilterValue: (value: FilterOptions) => void;
 };
 
-const FilterRepos: React.FC<Props> = ({ setFilterValue, searchParams }) => {
-  console.log('repos in filteoptions');
-
+const FilterRepos: React.FC<Props> = ({ setFilterValue }) => {
   return (
     <nav className={styles.filter}>
       {Object.values(FilterOptions).map(filterValue => (
         <RepoFilterLink
           key={filterValue}
-          filterValue={filterValue}
-          setFilterValue={setFilterValue}
-          searchParams={searchParams}
+          params={{ sort: filterValue }}
+          onClick={() => setFilterValue(filterValue)}
         >
           {filterValue}
         </RepoFilterLink>

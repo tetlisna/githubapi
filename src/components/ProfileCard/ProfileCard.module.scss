@@ -1,7 +1,7 @@
 .profileCard {
-  border: 1px solid var(--light-color);
   display: grid;
-  grid-template-columns: repeat(2, 1fr) 250px;
+  grid-template-columns: repeat(2, 1fr);
+  border: 1px solid var(--light-color);
   grid-gap: 2rem;
   padding: 2rem 1.5rem;
 
@@ -38,12 +38,25 @@
       color: var(--primary-color);
     }
   }
+  &__star {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: var(--primary-color);
+  }
 }
 
 .avatarName {
   display: grid;
   grid-template-columns: 3rem 1fr;
   grid-gap: 2rem;
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
 }
 
 .skillTag {
@@ -68,8 +81,6 @@
 }
 
 .avatarTitle {
-  font-size: 1.2rem;
-  font-weight: 800;
 }
 
 .avatarSubtitle {

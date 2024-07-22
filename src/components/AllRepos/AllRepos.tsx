@@ -10,7 +10,7 @@ type Props = {
 
 const AllRepos: React.FC<Props> = ({ repos, isLoading, hasError }) => {
   return (
-    <div className={styles.allRepos}>
+    <div>
       {isLoading && <p>Loading...</p>}
       {hasError && <p>{hasError}</p>}
       <h3 className={styles.title}>Top Repositories</h3>

@@ -9,20 +9,19 @@ type Props = {
 };
 
 const AllRepos: React.FC<Props> = ({ repos, isLoading, hasError }) => {
-  console.log('in AllRepos', repos);
   return (
     <div className={styles.allRepos}>
       {isLoading && <p>Loading...</p>}
       {hasError && <p>{hasError}</p>}
+      <h3 className={styles.title}>Top Repositories</h3>
       {!isLoading && repos.length > 0 && (
         <div className={styles.reposList}>
-          <h3 className={styles.title}>Top Repositories</h3>
           {repos.map(repo => (
             <ProfileCard key={repo.id} repo={repo} />
           ))}
         </div>
       )}
-      {/* {!isLoading && repos.length === 0 && <p>No repositories found</p>} */}
+      {!isLoading && repos.length === 0 && <p>No repositories found</p>}
     </div>
   );
 };

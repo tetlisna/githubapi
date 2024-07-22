@@ -1,5 +1,11 @@
 .filter {
-  display: inline-block;
-  gap: 1rem;
-  color: aqua;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+  grid-gap: 1rem;
+  padding: 0.8rem;
+  color: var(--light-color);
+
+  &:hover, &:active {
+    color: var(--primary-color);
+  }
 }

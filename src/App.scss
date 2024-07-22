@@ -1,16 +1,13 @@
 .main-content {
-  display: grid;
-  // grid-template-columns: repeat(1fr 1fr 1fr);
+  margin: 1rem;
 }
 
 .input-wrapper {
   display: flex;
-  // gap: 1rem;
 }
 
 .input-search {
-  // display: block;
-  width: 100vw;
+  width: calc(100vw - 1rem);
   border: 1px solid var(--light-color);
   border-radius: 0.2rem;
   padding: 12px 20px;
@@ -19,11 +16,3 @@
   font-weight: 400;
   font-size: 0.8rem;
 }
-
-//   a {
-//     color: var(--primary-color);
-
-//     &:hover {
-//       color: var(--primary-color-dark);
-//     }
-//   }

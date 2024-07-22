@@ -1,26 +1,17 @@
-// import { useSearchParams } from 'react-router-dom';
 import { FilterOptions } from '../../types/enums';
 import { RepoFilterLink } from '../RepoFilterLink/RepoFilterLink';
 import { RepoDetails } from '../../types/interfaces';
 import styles from './FilterRepos.module.scss';
 
 type Props = {
+  searchParams: URLSearchParams;
   repos: RepoDetails[];
   setFilterValue: (value: FilterOptions) => void;
 };
 
-const FilterRepos: React.FC<Props> = ({ repos, setFilterValue }) => {
-  // const [searchParams, setSearchParams] = useSearchParams();
-  console.log(repos, 'repos in filteoptions');
+const FilterRepos: React.FC<Props> = ({ setFilterValue, searchParams }) => {
+  console.log('repos in filteoptions');
 
-  // const query = searchParams.get('query') || '';
-  // console.log('FilterRepos');
-
-  // function handleQueryChange(event: React.ChangeEvent<HTMLInputElement>) {
-  //   const params = new URLSearchParams(searchParams);
-  //   params.set('query', event.target.value);
-  //   setSearchParams(params);
-  // }
   return (
     <nav className={styles.filter}>
       {Object.values(FilterOptions).map(filterValue => (
@@ -28,6 +19,7 @@ const FilterRepos: React.FC<Props> = ({ repos, setFilterValue }) => {
           key={filterValue}
           filterValue={filterValue}
           setFilterValue={setFilterValue}
+          searchParams={searchParams}
         >
           {filterValue}
         </RepoFilterLink>

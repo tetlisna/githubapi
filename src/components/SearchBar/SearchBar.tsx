@@ -5,16 +5,31 @@ import { useEffect, useState } from 'react';
 import { useDebounce } from '../../hooks/useDebounce';
 
 type Props = {
-  onSearch: (query: string) => void;
+  searchParams: URLSearchParams;
+  setSearchParams: (searchParams: URLSearchParams) => void;
 };
 
-const SearchBar: React.FC<Props> = ({ onSearch }) => {
-  const [query, setQuery] = useState('');
+const SearchBar: React.FC<Props> = ({ searchParams, setSearchParams }) => {
+  const initialQuery = searchParams.get('query') || '';
+  const [query, setQuery] = useState(initialQuery);
   const debouncedQuery = useDebounce(query, 1000);
 
   useEffect(() => {
-    onSearch(debouncedQuery);
-  }, [debouncedQuery, onSearch]);
+    if (!debouncedQuery.trim()) {
+      setSearchParams(new URLSearchParams({}));
+    } else {
+      const params = new URLSearchParams();
+      params.set('query', debouncedQuery);
+
+      if (searchParams.get('sort')) {
+        params.set('sort', searchParams.get('sort')!);
+      }
+
+      setSearchParams(params);
+
+      setSearchParams(new URLSearchParams(params));
+    }
+  }, [debouncedQuery, setSearchParams]);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     console.log('in handleInputChange');

@@ -42,7 +42,7 @@
   --dark-color: #000000;
   --light-color: #ffffff;
   --primary-color: #af7fff;
-  --primary-color-dark: #875fc7;
+  --primary-color-light: #d3b7ff;
 }
 
 body,
@@ -74,8 +74,14 @@ a {
   outline: none;
 }
 
+input {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'JetBrains Mono', sans-serif;
   background: var(--dark-color);
   color: var(--light-color);
+
+  box-sizing: border-box;
 }

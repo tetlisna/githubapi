@@ -10,12 +10,6 @@ const router = createBrowserRouter([
     path: '/',
     element: <App />,
     errorElement: <ErrorPage />,
-    // children: [
-    //   {
-    //     path: "owner/:ownerId",
-    //     element: <div>Owner</div>,
-    //   },
-    // ],
   },
 ]);
 

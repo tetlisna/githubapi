@@ -1,7 +1,7 @@
 import { RequestMethod } from '../types/types';
 
 const BASE_URL = import.meta.env.VITE_API_URL;
-const token = import.meta.env.VITE_GITHUB_TOKEN;
+const token = import.meta.env.VITE_API_TOKEN;
 
 function request<T>(
   url: string,

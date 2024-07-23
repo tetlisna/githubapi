@@ -29,10 +29,9 @@
     gap: 0.5rem;
   }
 
-
   &__link {
     color: var(--light-color);
-    word-break:break-all;
+    word-break: break-all;
 
     transition: color 0.2ms ease;
 
@@ -43,26 +42,25 @@
 
   &__icons {
     display: flex;
-    gap: 10px; 
+    gap: 10px;
   }
 
   &__icon {
     display: inline-flex;
     align-items: center;
-    gap: 5px; 
-    padding-left: 20px; 
+    gap: 5px;
+    padding-left: 20px;
     background-repeat: no-repeat;
     background-size: contain;
   }
 
   &__star {
-    background-image: url('../../assets/icons/star.svg'); 
+    background-image: url('../../assets/icons/star.svg');
   }
 
   &__fork {
-    background-image: url('../../assets/icons/fork.svg'); 
-    }
-  
+    background-image: url('../../assets/icons/fork.svg');
+  }
 }
 
 .avatarName {

@@ -9,7 +9,8 @@ type Props = {
   setFilterValue: (value: FilterOptions) => void;
 };
 
-const FilterRepos: React.FC<Props> = ({ setFilterValue }) => {
+const FilterRepos: React.FC<Props> = ({ searchParams, setFilterValue }) => {
+  const activeSort = searchParams.get('sort');
   return (
     <nav className={styles.filter}>
       {Object.values(FilterOptions).map(filterValue => (
@@ -17,6 +18,7 @@ const FilterRepos: React.FC<Props> = ({ setFilterValue }) => {
           key={filterValue}
           params={{ sort: filterValue }}
           onClick={() => setFilterValue(filterValue)}
+          className={`${styles.filterButton} ${activeSort === filterValue ? styles.active : ''}`}
         >
           {filterValue}
         </RepoFilterLink>

@@ -11,7 +11,7 @@ export default function ErrorPage() {
     <div id="error-page">
       <div className={styles.errorPage}>
         <img
-          src="../../../public/assets/Image404.jpg"
+          src="assets/Image404.jpg"
           alt="Error"
           className={styles.errorImage}
         />

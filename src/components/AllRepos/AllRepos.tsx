@@ -4,24 +4,22 @@ import ProfileCard from '../ProfileCard/ProfileCard';
 
 type Props = {
   repos: RepoDetails[];
-  isLoading: boolean;
+  // isLoading: boolean;
   hasError: string | null;
 };
 
-const AllRepos: React.FC<Props> = ({ repos, isLoading, hasError }) => {
+const AllRepos: React.FC<Props> = ({ repos, hasError }) => {
   return (
     <div>
-      {isLoading && <p>Loading...</p>}
-      {hasError && <p>{hasError}</p>}
+      {hasError && <p className="error">{hasError}</p>}
       <h3 className={styles.title}>Top Repositories</h3>
-      {!isLoading && repos.length > 0 && (
+      {repos.length > 0 && (
         <div className={styles.reposList}>
           {repos.map(repo => (
             <ProfileCard key={repo.id} repo={repo} />
           ))}
         </div>
       )}
-      {!isLoading && repos.length === 0 && <p>No repositories found</p>}
     </div>
   );
 };

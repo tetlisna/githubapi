@@ -25,6 +25,10 @@
   --primary-color-light: #d3b7ff;
 }
 
+html {
+  font-size: 1rem;
+}
+
 body,
 h1,
 h2,
@@ -45,7 +49,6 @@ ul {
 }
 
 input,
-textarea,
 button,
 a {
   font-family: inherit;
@@ -65,4 +68,12 @@ body {
   color: var(--light-color);
 
   box-sizing: border-box;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  
+  padding: 2rem;
+  color: var(--light-color);
 }

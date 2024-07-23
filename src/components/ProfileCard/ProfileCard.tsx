@@ -7,6 +7,14 @@ type Props = {
 
 const ProfileCard: React.FC<Props> = ({ repo }) => {
   const { owner } = repo;
+  const description = repo.description || '';
+  const maxLength = 1000;
+
+  const truncatedDescription =
+    description.length > maxLength
+      ? description.slice(0, maxLength) + '...'
+      : description;
+
   return (
     <>
       <div className={styles.profileCard}>
@@ -40,11 +48,20 @@ const ProfileCard: React.FC<Props> = ({ repo }) => {
               </a>
             </strong>
 
-            <div className={styles.profileCard__star}>
-              <p>✩{repo.stargazers_count}</p>
+            <div className={styles.profileCard__icons}>
+              <span
+                className={`${styles.profileCard__icon} ${styles.profileCard__star}`}
+              >
+                {repo.stargazers_count}
+              </span>
+              <span
+                className={`${styles.profileCard__icon} ${styles.profileCard__fork}`}
+              >
+                {repo.forks}
+              </span>
             </div>
           </div>
-          {repo.description}
+          {truncatedDescription}
         </div>
       </div>
     </>

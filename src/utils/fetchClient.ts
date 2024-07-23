@@ -1,7 +1,7 @@
 import { RequestMethod } from '../types/types';
 
 const BASE_URL = import.meta.env.VITE_API_URL;
-const token = import.meta.env.REACT_APP_GITHUB_TOKEN;
+const token = import.meta.env.VITE_GITHUB_TOKEN;
 
 function request<T>(
   url: string,
@@ -15,7 +15,6 @@ function request<T>(
       Authorization: `${token}`,
     };
   }
-
   return Promise.resolve()
     .then(() => fetch(BASE_URL + url, options))
     .then(response => {

@@ -1,8 +1,7 @@
-export enum StatusCode {
-  OK = 200,
-  NotModified = 304,
-  ValidationFailed = 422,
-  ServiceUnavailable = 503,
+export enum ErrorTypes {
+  RATE_LIMIT = 'You have reached rate limit, try again later',
+  GENERIC = 'Failed to fetch',
+  NO_REPO = 'No repositories found',
 }
 
 export enum FilterOptions {

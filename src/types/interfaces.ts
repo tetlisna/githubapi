@@ -6,6 +6,7 @@ export interface Owner {
 }
 
 export interface DataResponse {
+  total_count: number;
   items: RepoDetails[];
 }
 
@@ -16,4 +17,5 @@ export interface RepoDetails {
   description: string;
   html_url: string;
   stargazers_count: number;
+  forks: number;
 }

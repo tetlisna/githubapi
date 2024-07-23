@@ -47,19 +47,18 @@ const ProfileCard: React.FC<Props> = ({ repo }) => {
                 {repo.name}
               </a>
             </strong>
-
-            <div className={styles.profileCard__icons}>
-              <span
-                className={`${styles.profileCard__icon} ${styles.profileCard__star}`}
-              >
-                {repo.stargazers_count}
-              </span>
-              <span
-                className={`${styles.profileCard__icon} ${styles.profileCard__fork}`}
-              >
-                {repo.forks}
-              </span>
-            </div>
+          </div>
+          <div className={styles.profileCard__icons}>
+            <span
+              className={`${styles.profileCard__icon} ${styles.profileCard__star}`}
+            >
+              {repo.stargazers_count}
+            </span>
+            <span
+              className={`${styles.profileCard__icon} ${styles.profileCard__fork}`}
+            >
+              {repo.forks}
+            </span>
           </div>
           {truncatedDescription}
         </div>

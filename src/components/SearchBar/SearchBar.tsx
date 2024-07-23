@@ -24,7 +24,7 @@ const SearchBar: React.FC<Props> = ({ searchParams, setSearchParams }) => {
       });
       setSearchParams(new URLSearchParams(updatedParams));
     }
-  }, [debouncedQuery, setSearchParams]);
+  }, [debouncedQuery, searchParams]);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
